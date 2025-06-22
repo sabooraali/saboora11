@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المدينة نت - خدمات رقمية احترافية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg-color: #1a1a2e;
+      --card-bg: #2a2a3e;
+      --primary-accent: #00bcd4;
+      --secondary-accent: #f1c40f;
+      --text-color: #e0e0e0;
+      --title-color: #ffffff;
+      --border-radius: 12px;
+      --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    header {
+      background: var(--card-bg);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 3px solid var(--primary-accent);
+      z-index: 1000;
+      position: relative;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 5px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary-accent);
+    }
+    #themeToggle {
+      background: var(--primary-accent);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .video-header {
+      width: 100%;
+      height: 100vh; /* يغطي كامل الشاشة */
+      overflow: hidden;
+    }
+    .video-header video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .container {
+      padding: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .main-title {
+      text-align: center;
+      color: var(--title-color);
+      margin-bottom: 40px;
+      font-size: 2.3em;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .service-card {
+      background: var(--card-bg);
+      border: 2px solid var(--primary-accent);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: scale(1.02);
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: var(--title-color);
+      font-size: 1.4em;
+    }
+    .service-card p {
+      margin: 10px 0 0;
+    }
+    .service-card i {
+      font-size: 1.8em;
+      color: var(--secondary-accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .about, .contact {
+      background: var(--card-bg);
+      padding: 25px;
+      margin: 40px 0;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+    }
+    .about h2, .contact h2 {
+      margin-top: 0;
+      color: var(--title-color);
+    }
+    footer.page-footer {
+      padding: 30px 15px;
+      background-color: var(--card-bg);
+      border-top: 3px solid var(--primary-accent);
+      text-align: center;
+      color: var(--text-color);
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .contact-info p {
+      margin: 12px 0;
+      font-size: 1em;
+    }
+    .contact-info i {
+      color: var(--primary-accent);
+      margin: 0 5px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 1.6em;
+      padding: 12px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; text-align: center; }
+      nav { flex-direction: column; }
+      .main-title { font-size: 1.8em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="#about">نبذة</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+    <button id="themeToggle">تغيير الإضاءة</button>
+  </header>
+
+  <div class="video-header">
+    <video autoplay loop controls>
+      <source src="ss.mp4.mp4" type="video/mp4" />
+      متصفحك لا يدعم الفيديو.
+    </video>
+  </div>
+
+  <div class="container">
+    <h1 class="main-title">المدينة نت للخدمات الرقمية</h1>
+
+    <div class="service-card">
+      <i class="fas fa-gamepad"></i>
+      <h3><a href="Untitled-1.html">شحن البرامج والألعاب</a></h3>
+      <p>اشحن ألعابك وبرامجك المفضلة بسرعة وأمان، مع بطاقات وإصدارات حديثة.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-hdd"></i>
+      <h3><a href="Untitled-6.html">تعبئة الذواكر والهاردات</a></h3>
+      <p>تعبئة فلاش، هارد، أو هاتف بأحدث المحتويات حسب رغبتك.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-download"></i>
+      <h3><a href="Untitled-3.html">تنزيلات حسب الطلب</a></h3>
+      <p>نقوم بتحميل الملفات أو البرامج التي تحتاجها خصيصاً لك.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3><a href="Untitled-4.html">برمجة الهواتف واللابتوبات</a></h3>
+      <p>حلول برمجية وصيانة لأنظمة الأجهزة الذكية بكل احترافية.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-headphones-alt"></i>
+      <h3><a href="Untitled-5.html">اكسسوارات وشرائح</a></h3>
+      <p>بيع سماعات، كفرات، شواحن، وشرائح لجميع الشبكات.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-bolt"></i>
+      <h3><a href="Untitled-2.html">شحن إلكتروني</a></h3>
+      <p>شحن سريع لجميع الشبكات المحلية والدولية.</p>
+    </div>
+
+    <section id="about" class="about">
+      <h2>من نحن؟</h2>
+      <p>المدينة نت، مركزك الأول للخدمات الرقمية الحديثة في قعطبة، نوفر خدمات شاملة بموثوقية وجودة عالية.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>تواصل معنا</h2>
+      <p><i class="fas fa-map-marker-alt"></i> قعطبة، الشارع العام، أمام مؤسسة يحيى ناصر</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+967774238789">774238789</a> | <a href="tel:+967716178765">716178765</a></p>
+    </section>
+  </div>
+
+  <footer class="page-footer">
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> المدينة نت - جميع الحقوق محفوظة &copy; 2025</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/967774238789" class="whatsapp" target="_blank" title="تواصل معنا عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    let isDark = true;
+    toggleButton.addEventListener('click', () => {
+      if (isDark) {
+        root.style.setProperty('--bg-color', '#f7f7f7');
+        root.style.setProperty('--card-bg', '#ffffff');
+        root.style.setProperty('--text-color', '#333');
+        root.style.setProperty('--title-color', '#000');
+        toggleButton.textContent = 'الوضع الليلي';
+      } else {
+        root.style.setProperty('--bg-color', '#1a1a2e');
+        root.style.setProperty('--card-bg', '#2a2a3e');
+        root.style.setProperty('--text-color', '#e0e0e0');
+        root.style.setProperty('--title-color', '#ffffff');
+        toggleButton.textContent = 'تغيير الإضاءة';
+      }
+      isDark = !isDark;
+    });
+  </script>
+</body>
+</html>
